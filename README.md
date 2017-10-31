@@ -1,5 +1,5 @@
 # naziv projekta
-- projetnik zadatak SSSS Tehmeha
-- team members: Ime Prezime
+- projetnik zadatak kladionica
+- team members: Fran Hric
 - programming language: C++
-- description: Opis
+- description: delamo kladionicu
