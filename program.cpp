@@ -1,8 +1,15 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int main()
+int generiraj_broj()
+{
+    srand(time(0));
+    return rand()%3 ;
+}
 
+int main()
 {
     int oznaka_susreta[10]={7119,7117,7123,7122,7125,7126,7124,7118,1186,7143};
     string naziv[10]={"Mancester utd.-Benfica", "Atletico Madrid-Qarabakh", "Celtic-Bayern", "PSG-Anderlecht", "Sporting L.-Juventus", "Olympiakos-Barcelona", "Roma-Chelsea", "Basel-CSKA Moskva", "Leeds-Derby", "KSV 1919-FAC Bec" };
@@ -12,7 +19,7 @@ int main()
 
 
     for( int i=0;i<10;i++)
-    {2
+    {
       cout << oznaka_susreta[i]<<"\t"  << koef_pobjeda1[i] <<"\t" <<koef_nerijesenoX[i] << "\t" << koef_pobjeda2[i]<< "\t" <<  naziv[i] << endl;
     }
     int oznaka_kladjenja;
@@ -27,23 +34,39 @@ int main()
     cout << "Odaberite svotu novaca kojeg zelite ulozit:" ;
     cin >> novac;
 
+    double dobitak;
     for(int i=0; i<10; i++)
         if(oznaka_kladjenja==oznaka_susreta[i])
         {
             if(mogucnost==1)
             {
-            cout<<"Vas dobitak je:" << novac*koef_pobjeda1[i] << "kn";
+                dobitak = novac*koef_pobjeda1[i];
+                cout<<"Vas moguci dobitak je:" << dobitak << "kn" << endl;
             break;
             }
             else if(mogucnost==0)
             {
-                cout<<"Vas dobitak je:" << novac*koef_nerijesenoX[i] << "kn";
+                dobitak = novac*koef_nerijesenoX[i];
+                cout<<"Vas moguci dobitak je:" << dobitak << "kn" << endl;
             }
             else if(mogucnost==2)
             {
-                cout << "Vas dobitak je:" << novac*koef_pobjeda2[i] << "kn";
+                dobitak =novac*koef_pobjeda2[i];
+                cout << "Vas moguci dobitak je:" << dobitak << "kn" << endl;
             }
         }
+        cout << endl;
+        int odigrana_tekma = generiraj_broj();
+        if(odigrana_tekma==mogucnost)
+        {
+        cout << "Listic je dobitan"<< endl;
+        cout << "Vas dobitak je: " << dobitak << "kn";
+        }
+        else
+        {
+            cout << "Aaaaa glupanneeeee haaahahahahhaha, nisi nista dobio!!" << endl;
+        }
+
 return 0;
     }
 
