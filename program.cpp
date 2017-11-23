@@ -12,7 +12,7 @@ int main()
 
 
     for( int i=0;i<10;i++)
-    {
+    {2
       cout << oznaka_susreta[i]<<"\t"  << koef_pobjeda1[i] <<"\t" <<koef_nerijesenoX[i] << "\t" << koef_pobjeda2[i]<< "\t" <<  naziv[i] << endl;
     }
     int oznaka_kladjenja;
@@ -20,7 +20,7 @@ int main()
     cin >> oznaka_kladjenja;
 
     int mogucnost;
-    cout << "Odaberite jednu od mogucnosti (1-pobjedujuje prvi tim, 2-nerijeseno, 3-pobjeduje drugi tim):  ";
+    cout << "Odaberite jednu od mogucnosti (1-pobjedujuje prvi tim, 0-nerijeseno, 2-pobjeduje drugi tim):  ";
     cin >> mogucnost;
 
     double novac;
@@ -35,11 +35,11 @@ int main()
             cout<<"Vas dobitak je:" << novac*koef_pobjeda1[i] << "kn";
             break;
             }
-            else if(mogucnost==2)
+            else if(mogucnost==0)
             {
                 cout<<"Vas dobitak je:" << novac*koef_nerijesenoX[i] << "kn";
             }
-            else if(mogucnost==3)
+            else if(mogucnost==2)
             {
                 cout << "Vas dobitak je:" << novac*koef_pobjeda2[i] << "kn";
             }
